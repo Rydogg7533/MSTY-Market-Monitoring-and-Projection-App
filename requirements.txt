@@ -2,3 +2,6 @@ streamlit
 pandas
 plotly-express
 yfinance
+matplotlib
+requests
+reportlab
