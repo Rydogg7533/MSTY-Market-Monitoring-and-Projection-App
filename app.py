@@ -93,7 +93,7 @@ with tabs[0]:
 with tabs[1]:
     st.header("🛡️ Hedge Estimator")
     shares_to_hedge = st.number_input("Shares to Hedge", value=10000, key="hedge_shares")
-    exit_price = st.number_input("Expected Exit Price ($)", value=10.0, key="hedge_exit_price")
+    exit_price = st.number_input("Expected Exit Price ($)", value=10.0, key="exit_price_tab1")
 
     # Save inputs to localStorage
     components.html(f"""
@@ -125,7 +125,7 @@ with tabs[3]:
     st.markdown("Estimate and compare the cost and outcome of put options to hedge MSTY using live data.")
 
     current_price = st.number_input("Current MSTR Price ($)", value=25.0, min_value=0.01)
-    exercise_price = st.number_input("Expected Exit Price ($)", value=10.0, min_value=0.01, key="hedge_exit_price")
+    exercise_price = st.number_input("Expected Exit Price ($)", value=10.0, min_value=0.01, key="exit_price_tab2")
     shares_to_hedge = st.number_input("Shares to Hedge", value=10000, min_value=1, key="hedge_shares")
     max_cost_pct = st.slider("Max Hedge Cost (% of Position)", 0, 100, 5)
     contract_size = 100
