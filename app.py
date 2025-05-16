@@ -235,7 +235,13 @@ with tabs[4]:
 
     # Sample access to hedge summary
     if "summary_df" in locals():
-        st.download_button("🛡️ Download Hedge CSV", summary_df.to_csv(index=False), "hedging.csv")
+st.download_button(
+    label="🛡️ Download Hedge CSV",
+    data=summary_df.to_csv(index=False),
+    file_name="hedging.csv",
+    mime="text/csv",
+    key="download_hedge_csv_btn"
+)
 
     # Cost basis export already exists in tab 3
     st.info("Projections, hedge results, and cost basis can all be exported as CSV.")
